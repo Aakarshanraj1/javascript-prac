@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Practice</title>
+    <body>
+      <p>
+        YouTube Subscribe Button
+      </p>
+      <button onclick="
+       subscribe();
+      " class="js-subs">
+        Subscribe
+      </button>
+
+     <script>
+      function subscribe(){
+        const button= document.querySelector('.js-subs');
+
+        if (button.innerText==='Subscribe'){
+          button.innerHTML='Subscribed';
+        }
+        else{
+          button.innerHTML = 'Subscribe';
+        }
+
+      }
+     </script>
+    </body>
+  </head>
