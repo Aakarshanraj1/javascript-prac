@@ -114,7 +114,8 @@
       }
       localStorage.setItem('score' , JSON.stringify(score));
       updateScore();
-      document.querySelector('.js-result').innerHTML = `${result}`;
+      document.querySelector('.js-result')
+        .innerHTML = `${result}`;
       document.querySelector('.js-pick')
        .innerHTML = `You ${playerMove} \- ${ComputerMove} Computer`;
     }
