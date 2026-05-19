@@ -1,0 +1,36 @@
+body{
+  background-color: rgb(25, 25, 25);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+.reset{
+  padding: 8px 16px 8px 16px;
+  cursor: pointer;
+}
+.title{
+  font-size: 30px;
+  font-weight: bold;
+}
+img{
+  width: 50px;
+  
+}
+.move-button{
+  background-color: transparent;
+  border: solid 2px white;
+  border-radius: 60px;
+  padding:25px 28px 25px 28px;
+  margin: 0px 5px 0px 5px;
+}
+.move-button:hover{
+  cursor: pointer;
+}
+.js-result{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.js-score{
+  margin-top: 50px;
+}
+
