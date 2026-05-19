@@ -3,8 +3,31 @@
   <head>
     <title>DOM Practice</title>
     <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
       .js-subs {
         margin-bottom: 50px;
+        padding: 10px 16px 10px 16px;
+        background-color: black;
+        color: white;
+        font-family: arial;
+        font-weight: bold;
+        border-radius: 20px;
+        border: none;
+        transition: 0.2s;
+      
+      
+      }
+      .js-subs:hover{
+      opacity: 0.8;
+      cursor: pointer;
+
+      }
+      .js-subs:active{
+        opacity: 1;
+        background-color: white;
+        color: black;
       }
       .js-link{
         text-decoration: underline;
@@ -12,6 +35,26 @@
       .js-rpc{
         margin-top: 50px;
       }
+      .js-cal-but{
+        background-color: green;
+        color: white;
+        padding: 12px 18px 12px 18px;
+        font-family: arial;
+        border:none;
+        transition: 0.2s;
+
+      }
+      .js-input{
+        padding: 11px 18px 11px 18px;
+      }
+      .is-subs{
+        background-color: rgb(240, 240, 240);
+        color: black;
+        
+      }
+      
+
+      
     </style>
     <body>
       <p>
@@ -35,7 +78,7 @@
       <input placeholder="Cost of product" class="js-input" onkeydown="costKey(event);">
       <button onclick="
       tax();
-      ">Calculate</button>
+      " class="js-cal-but">Calculate</button>
       <p class="js-total"></p>
 
       <p class="js-rpc">Rock Paper Scissor game</p>
@@ -55,9 +98,13 @@
 
         if (button.innerText==='Subscribe'){
           button.innerHTML='Subscribed';
+          button.classList.add('is-subs');
+         
         }
         else{
           button.innerHTML = 'Subscribe';
+          button.classList.remove('is-subs');
+      
         }
 
       }
