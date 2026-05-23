@@ -1,0 +1,52 @@
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.js-newin {
+    padding: 10px 16px;
+    font-weight: 600;
+}
+
+.js-date {
+    padding: 9px 16px;
+}
+
+.js-addbt {
+    padding: 13px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.js-dlbt {
+    padding: 13px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.js-grid {
+    display: grid;
+    grid-template-columns: 220px 180px 100px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.todo-row {
+    display: grid;
+    grid-template-columns: 220px 180px 100px;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.js-cls {
+    font-family: 'Courier New', Courier, monospace;
+}

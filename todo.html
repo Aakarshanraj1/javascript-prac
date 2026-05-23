@@ -3,27 +3,27 @@
 
 <head>
   <title>ToDo List</title>
+  <link rel="stylesheet" href="styles/todo.css">
 </head>
 
 <body>
-  <p>
-    ToDo List practise 1
-  </p>
-  <input placeholder="ToDo Name" class="js-name">
-  <button onclick="
-     addTodo();
-    " onkeydown="handleKey(event);">
-    Add
-  </button>
-  <p>ToDo List practise 2</p>
-  <input placeholder="ToDo Name" >
 
-  <button>Add</button>
+  <p>ToDo List</p>
 
-  <script src="scripts/todo.js">
+  <div class="js-grid">
+    <input placeholder="ToDo Name" class="js-newin">
 
+    <input type="date" class="js-date">
 
-  </script>
+    <button onclick="addTodo();" class="js-addbt">
+      Add
+    </button>
+  </div>
+
+  <div class="js-name-show"></div>
+
+  <script src="scripts/todo.js"></script>
+
 </body>
 
 </html>

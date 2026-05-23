@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Armstrong Number Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(118, 75, 162) 100%);
+    }
+    
+    .container {
+      background: rgb(255, 255, 255);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+    
+    h1 {
+      color: rgb(51, 51, 51);
+      margin-bottom: 10px;
+    }
+    
+    .info {
+      color: rgb(102, 102, 102);
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    
+    .input-group {
+      margin-bottom: 20px;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid rgb(221, 221, 221);
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: rgb(102, 126, 234);
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background: rgb(102, 126, 234);
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    button:hover {
+      background: rgb(118, 75, 162);
+    }
+    
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+    }
+    
+    .result.true {
+      background: rgb(212, 237, 218);
+      color: rgb(21, 87, 36);
+      border: 1px solid rgb(195, 230, 203);
+      display: block;
+    }
+    
+    .result.false {
+      background: rgb(248, 215, 218);
+      color: rgb(114, 28, 36);
+      border: 1px solid rgb(245, 198, 203);
+      display: block;
+    }
+    
+    .examples {
+      margin-top: 30px;
+      text-align: left;
+      background: rgb(249, 249, 249);
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+    
+    .examples h3 {
+      margin-top: 0;
+      color: rgb(51, 51, 51);
+    }
+    
+    .examples p {
+      margin: 5px 0;
+      color: rgb(102, 102, 102);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔢 Armstrong Number Checker</h1>
+    <p class="info">An Armstrong (narcissistic) number equals the sum of its digits each raised to the power of the number of digits</p>
+    
+    <div class="input-group">
+      <input type="number" id="numberInput" placeholder="Enter a number" />
+    </div>
+    
+    <button onclick="checkNumber()">Check Number</button>
+    
+    <div id="result" class="result"></div>
+    
+    <div class="examples">
+      <h3>Examples:</h3>
+      <p>✓ 153 = 1³ + 5³ + 3³</p>
+      <p>✓ 370 = 3³ + 7³ + 0³</p>
+      <p>✓ 9474 = 9⁴ + 4⁴ + 7⁴ + 4⁴</p>
+      <p>✗ 123 is NOT an Armstrong number</p>
+    </div>
+  </div>
+
+  <script>
+    function isArmstrongNumber(num) {
+      // Convert number to string to get digits
+      const digits = String(num).split('');
+      const numOfDigits = digits.length;
+      
+      // Sum each digit raised to the power of total digits
+      const sum = digits.reduce((acc, digit) => {
+        return acc + Math.pow(Number(digit), numOfDigits);
+      }, 0);
+      
+      // Check if sum equals original number
+      return sum === num;
+    }
+    
+    function checkNumber() {
+      const input = document.getElementById('numberInput');
+      const resultDiv = document.getElementById('result');
+      const num = parseInt(input.value);
+      
+      if (isNaN(num) || input.value.trim() === '') {
+        resultDiv.textContent = 'Please enter a valid number';
+        resultDiv.className = 'result false';
+        return;
+      }
+      
+      const isArmstrong = isArmstrongNumber(num);
+      resultDiv.className = 'result ' + isArmstrong;
+      resultDiv.textContent = isArmstrong 
+        ? `✓ ${num} is an Armstrong Number!` 
+        : `✗ ${num} is NOT an Armstrong Number`;
+    }
+    
+    // Allow Enter key to check
+    document.getElementById('numberInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkNumber();
+      }
+    });
+  </script>
+</body>
+
+</html>
