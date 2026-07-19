@@ -3,7 +3,8 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
-.reset{
+.reset,
+.auto-play{
   padding: 8px 16px 8px 16px;
   cursor: pointer;
 }
